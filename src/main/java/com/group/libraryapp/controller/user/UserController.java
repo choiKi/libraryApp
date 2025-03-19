@@ -28,7 +28,6 @@ public class UserController {
         for (int i = 0 ; i < users.size(); i++) {
             responses.add(new UserResponse(i+1, users.get(i)));
         }
-
         return responses;
     }
 
