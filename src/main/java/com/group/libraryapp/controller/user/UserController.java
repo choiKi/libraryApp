@@ -31,4 +31,12 @@ public class UserController {
         return responses;
     }
 
+    @GetMapping("/users")
+    public List<UserResponse> getUserss() {
+        List<UserResponse> responses = new ArrayList<>();
+        for (int i = 0 ; i < users.size(); i++) {
+            responses.add(new UserResponse(i+1, users.get(i)));
+        }
+        return responses;
+    }
 }
