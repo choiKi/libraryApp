@@ -34,7 +34,9 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="187c08f2-6390-4a93-b5ad-968cab997cba" object-ref="consoles/local-mysql" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="187c08f2-6390-4a93-b5ad-968cab997cba" />

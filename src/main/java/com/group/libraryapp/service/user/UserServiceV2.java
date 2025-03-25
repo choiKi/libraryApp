@@ -41,13 +41,14 @@ public class UserServiceV2 {
         user.updateName(request.getName());
         userRepository.save(user);
     }
+
     @Transactional
     public void deleteUser(String name) {
 
         if (userRepository.existsByName(name)) {
             throw new IllegalArgumentException();
         }
-        User user = userRepository.findByName(name);
+        User user = userRepository.findByName(name).orElseThrow(IllegalAccessError::new);
         userRepository.delete(user);
     }
 

@@ -1,8 +1,10 @@
 package com.group.libraryapp.controller.book;
 
-import com.group.libraryapp.dto.user.request.BookCreateRequest;
+import com.group.libraryapp.dto.book.request.BookCreateRequest;
+import com.group.libraryapp.dto.book.request.BookLoanRequest;
 import com.group.libraryapp.service.book.BookService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +22,13 @@ public class BookController {
         bookService.saveBook(request);
     }
 
+    @PostMapping("/book/loan")
+    public void loanBook(@RequestBody BookLoanRequest request) {
+        bookService.loanBook(request);
+    }
+
+    @PutMapping("/book/return")
+    public  void returnBook(@RequestBody BookLoanRequest request) {
+        bookService.returnBook(request);
+    }
 }
