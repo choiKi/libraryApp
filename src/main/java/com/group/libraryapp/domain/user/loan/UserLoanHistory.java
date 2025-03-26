@@ -55,4 +55,5 @@ public class UserLoanHistory {
     public boolean getIsReturn() {
         return isReturn;
     }
+
 }

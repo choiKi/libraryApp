@@ -45,18 +45,13 @@ public class BookService {
         }
 
         User user = userRepository.findByName(request.getUserName()).orElseThrow(IllegalArgumentException::new);
-        userLoanHistoryRepository.save(new UserLoanHistory(user, book.getName()));
+        user.loanBook(book.getName());
     }
 
     @Transactional
     public void returnBook(BookLoanRequest request) {
         User user = userRepository.findByName(request.getUserName()).orElseThrow(IllegalArgumentException::new);
-        UserLoanHistory loanHistory = userLoanHistoryRepository.findByUser_idAndBookName(user.getId(), request.getBookName()).orElseThrow(IllegalArgumentException::new);
-
-        if (loanHistory.getIsReturn()) {
-            throw new IllegalArgumentException("이미 반납된 책입니다.");
-        }
-        loanHistory.doReturn();
+        user.returnBook(request.getBookName());
 
 
     }
