@@ -13,6 +13,7 @@ public class UserJdbcRepository {
 
     public UserJdbcRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+
     }
 
     public boolean isUserNotExist(long userID) {
